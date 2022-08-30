@@ -1,0 +1,358 @@
+:root {
+    /* Colors */
+    /* --purple: #4C1E71; */
+    --purple: #3E294F;
+    --purple-low-opacity: rgba(62, 41, 79, .65);
+    /* --purple-low-opacity: rgb(76, 30, 113, .65); */
+    /* --light-grey: #deeaf3; */
+    --light-grey: #e1edf5;
+    --dark-grey: #333333;
+    --medium-grey: #666666;
+    /* --blue: #4782A5; */
+    --blue: #4786a7;
+    --blue-low-opacity: rgba(71, 134, 167, .65);
+    /* --blue-low-opacity: rgba(71, 130, 165, .65); */
+
+    --mobile-nav-height: 60px;
+
+    --burger-line-height: 2px;
+    --burger-line-width: 45px;
+
+    --border-radius: 5px;
+
+    --text-drop-shadow: 0px 4px 4px var(--dark-grey);
+
+    --dot-dimensions: 20px;
+}
+
+/*#region GENERIC Stuff */
+@font-face {
+        font-family: "Cormorant";
+        src: url("C:\\Users\\jerea\\Documents\\General_Programming\\Personal_Portfolio\\Cormorant\\Cormorant-VariableFont_wght.ttf");
+    }
+@font-face {
+    font-family: "Raleway";
+    src: url("C:\\Users\\jerea\\Documents\\General_Programming\\Personal_Portfolio\\Raleway\\Raleway-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: "Raleway-regular";
+    src: url("C:\\Users\\jerea\\Documents\\General_Programming\\Personal_Portfolio\\Lato\\Lato-Regular.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    color: var(--light-grey);
+    font-family: "Raleway", "sans-serif";
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+p {
+    font-family: "Cormorant";
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+section {
+    align-items: center;
+    background-image: url("images/DSC00800-phone_crop.jpg");
+    background-size: cover;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+/*#endregion END GENERIC Stuff */
+
+
+/*#region General Classes */
+.text-container {
+    align-items: center;
+    background-color: var(--purple-low-opacity);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin: 0 25px; */
+    min-height: 33vh;
+    padding: 25px 5vw;
+    width: 100vw;
+}
+
+.text-container.blue {
+    background-color: var(--blue-low-opacity);
+}
+
+.text-container h1, .text-container h2, .text-container p, .text-container li {
+    text-shadow: var(--text-drop-shadow);
+}
+
+.text-container h1 {
+    font-size: 2rem;
+}
+
+.text-container h2 {
+    font-size: 1.5rem;
+}
+
+.text-container p, .text-container li {
+    font-size: 1.1rem;
+}
+
+.skills > .text-container {
+    align-items: flex-start;
+    justify-content: center;
+}
+/*#endregion END General Classes */
+
+
+/*#region NAV Section */
+.desktop-nav {
+    display: none;
+}
+
+.mobile-nav-outer {
+    height: var(--mobile-nav-height);
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+}
+
+.mobile-nav {
+    align-items: center;
+    background: #333333;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    padding: 0 25px 0 25px;
+}
+
+.burger {
+    background: var(--light-grey);
+    height: var(--burger-line-height);
+    /* position: absolute; */
+    width: var(--burger-line-width);
+}
+
+.burger::before {
+    background: var(--light-grey);
+    content: "";
+    height: var(--burger-line-height);
+    position: fixed;
+    width: var(--burger-line-width);
+    top: 13px;
+}
+
+.burger::after {
+    background: var(--light-grey);
+    content: "";
+    height: var(--burger-line-height);
+    position: fixed;
+    width: var(--burger-line-width);
+    top: 45px;
+}
+
+.mobile-nav-links {
+    align-items: flex-end;
+    background: #333333;
+    border-top: var(--light-grey) solid 1px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: var(--mobile-nav-height);
+    width: 100vw;
+}
+
+.mobile-nav-links li {
+    border-bottom: var(--light-grey) solid 1px;
+    display: none;
+    height: var(--mobile-nav-height);
+    /* padding: 10px 25px 0 0; */
+    width: 100vw;
+}
+
+.mobile-nav-links li a {
+    display: block;
+    height: 100%;
+    line-height: var(--mobile-nav-height);
+    padding: 0 25px 0 0;
+    text-align: end;
+    width: 100%;
+}
+
+.current-link {
+    background: var(--blue);
+}
+/*#endregion END NAV Section */
+
+
+.main {
+    height: 100vh;
+    padding-top: 60px;
+    width: 100vw;
+}
+
+
+/*#region HOME Section */
+.home-page {
+    background-image: url("images/DSC00800-phone_crop.jpg");
+    /* display: none; */
+}
+
+.home-page .text-container h1, .home-page .text-container h2, .home-page .text-container p {
+    text-align: center;
+}
+
+/*#endregion END HOME Section */
+
+
+/*#region SKILLS Section */
+.skills {
+    display: none;
+    background-image: url("images/DSC01115-phone_crop.jpg");
+    background-position: bottom center;
+}
+
+.skills .text-container p {
+    margin: 0 0 10px 0;
+}
+
+.skills .text-container h1, .skills .text-container h2 {
+    border-bottom: solid 1px var(--light-grey);
+    margin: 0 0 10px 0;
+    width: 100%;
+}
+
+.skills .text-container h2 {
+    padding-top: 25px;
+}
+
+.skills .text-container ul {
+    padding-top: 5px;
+}
+
+.skills .text-container ul li {
+    font-family: "Cormorant";
+} 
+
+/*#endregion END SKILLS Section */
+
+
+/*#region PROJECTS Section */
+.projects {
+    background: var(--purple);
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.projects-outer {
+    height: 100%;
+    width: 100%;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 25px 15px;
+    width: 100%;
+}
+
+.project-text-container h2, .project-text-container p, .project-text-container a {
+    text-align: center;
+}
+
+.project-text-container h2 {
+    margin: 25px 0 0px;
+}
+
+/*
+The idea is that the background color will change as
+you swipe from one project to the next. The dot color and link color
+will change too.
+*/
+.project-text-container a {
+    color: var(--blue);
+    display: block;
+    margin: 0 0 10px;
+}
+
+.dot-menu {
+    align-items: center;
+    display: flex;
+    height: var(--mobile-nav-height);
+    justify-content: center;
+    /* width: 100%; */
+}
+
+.dot {
+    border-radius: var(--dot-dimensions);
+    border: none;
+    height: var(--dot-dimensions);
+    margin: 0 12.5px;
+    width: var(--dot-dimensions);
+}
+
+.first.dot {
+    background-color: var(--blue);
+}
+/*#endregion END PROJECTS Section */
+
+
+/*#region CONTACT Section */
+.contact {
+    display: none;
+}
+
+.contact .text-container.blue {
+    padding: 15vw;
+}
+
+.contact form {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact form label {
+    color: var(--light-grey);
+    margin: 0 0 5px 0;
+}
+
+.contact form input, .contact form textarea {
+    background-color: var(--light-grey);
+    /* border: solid 1px var(--dark-grey); */
+    border: none;
+    border-bottom: solid 1px var(--dark-grey);
+    border-radius: var(--border-radius);
+    color: var(--dark-grey);
+    margin: 0 0 15px 0;
+    padding: 5px;
+    width: 100%;
+}
+
+.contact form input[type="submit"] {
+    align-self: center;
+    background-color: var(--blue);
+    color: var(--light-grey);
+    max-width: 75px;
+}
+/*#endregion END CONTACT Section */
