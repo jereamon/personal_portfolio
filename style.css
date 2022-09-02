@@ -78,9 +78,9 @@ section {
     display: flex;
     height: 100%;
     justify-content: center;
-    margin-top: var(--mobile-nav-height);
-    position: fixed;
-    top: 0px;
+    /* margin-top: var(--mobile-nav-height); */
+    /* position: fixed;
+    top: 0px; */
     transition: top 485ms ease-in 10ms;
 }
 /*#endregion END GENERIC Stuff */
@@ -229,7 +229,7 @@ section {
 
 /*#region SKILLS Section */
 .skills {
-    display: none;
+    /* display: none; */
     background-image: url("images/DSC01115-phone_crop.jpg");
     background-position: bottom center;
     z-index: 999;
@@ -263,7 +263,7 @@ section {
 /*#region PROJECTS Section */
 .projects {
     background: var(--purple);
-    display: none;
+    /* display: none; */
     flex-direction: column;
     justify-content: space-between;
 }
@@ -324,7 +324,7 @@ will change too.
 
 /*#region CONTACT Section */
 .contact {
-    display: none;
+    /* display: none; */
 }
 
 .contact .text-container.blue {
