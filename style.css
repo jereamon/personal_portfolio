@@ -68,7 +68,7 @@ li {
 }
 
 img {
-    max-width: 150px;
+    max-width: 100%;
 }
 
 section {
@@ -78,10 +78,7 @@ section {
     display: flex;
     height: 100%;
     justify-content: center;
-    /* margin-top: var(--mobile-nav-height); */
-    /* position: fixed;
-    top: 0px; */
-    transition: top 485ms ease-in 10ms;
+    position: relative;
 }
 /*#endregion END GENERIC Stuff */
 
@@ -94,7 +91,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* margin: 0 25px; */
+    margin: 0 25px;
     min-height: 33vh;
     padding: 25px 5vw;
     width: 100vw;
@@ -104,7 +101,7 @@ section {
     background-color: var(--blue-low-opacity);
 }
 
-.text-container h1, .text-container h2, .text-container p, .text-container li {
+.text-container h1, .text-container h2, .text-container p, .text-container li, label {
     text-shadow: var(--text-drop-shadow);
 }
 
@@ -210,7 +207,7 @@ section {
 .main {
     height: 100vh;
     padding-top: 60px;
-    width: 100vw;
+    /* width: 100vw; */
 }
 
 
@@ -263,12 +260,16 @@ section {
 /*#region PROJECTS Section */
 .projects {
     background: var(--purple);
-    /* display: none; */
+    display: block;
     flex-direction: column;
-    justify-content: space-between;
+    height: 90%;
+    justify-content: flex-start;
 }
 
 .projects-outer {
+    /* display: flex; */
+    position: relative;
+    /* overflow: hidden; */
     width: 100%;
 }
 
@@ -276,10 +277,26 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    /* height: 100%; */
     padding: 25px 15px;
+    position: absolute;
+    /* top: 0; */
     width: 100%;
+    transition: left 500ms;
 }
+
+/* .project .two, .project .three {
+    
+} */
+
+/* .project.two {
+    left: 100%;
+    top: 0%;
+}
+
+.project.three {
+    left: 200%;
+} */
 
 .project-text-container h2, .project-text-container p, .project-text-container a {
     text-align: center;
@@ -305,6 +322,8 @@ will change too.
     display: flex;
     height: var(--mobile-nav-height);
     justify-content: center;
+    position: relative;
+    bottom: -90%;
     /* width: 100%; */
 }
 
@@ -323,10 +342,6 @@ will change too.
 
 
 /*#region CONTACT Section */
-.contact {
-    /* display: none; */
-}
-
 .contact .text-container.blue {
     padding: 15vw;
 }
@@ -336,11 +351,16 @@ will change too.
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: absolute;
+    /* width: 100%; */
+}
+
+.contact form h1 {
+    text-align: center;
     width: 100%;
 }
 
 .contact form label {
-    color: var(--light-grey);
     margin: 0 0 5px 0;
 }
 
