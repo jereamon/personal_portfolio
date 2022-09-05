@@ -285,18 +285,6 @@ section {
     transition: left 500ms;
 }
 
-/* .project .two, .project .three {
-    
-} */
-
-/* .project.two {
-    left: 100%;
-    top: 0%;
-}
-
-.project.three {
-    left: 200%;
-} */
 
 .project-text-container h2, .project-text-container p, .project-text-container a {
     text-align: center;
