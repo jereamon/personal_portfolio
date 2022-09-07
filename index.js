@@ -2,6 +2,46 @@ window.addEventListener("load", function() {
     let blue       = "#4786a7",
         light_grey = "#e1edf5";
 
+    //#region Mobile Nav Handlers
+    let nav_height = this.document.querySelector("nav").offsetHeight,
+        burger_container = document.querySelector(".burger-container"),
+        burger_open = false,
+        mobile_links = document.querySelector(".mobile-nav-links");
+
+    burger_container.addEventListener("click", toggle_mobile_nav);
+    this.window.addEventListener("scroll", close_mobile_nav);
+    
+
+    function toggle_mobile_nav() {
+        if (burger_open == true) {
+            close_mobile_nav()
+        } else {
+            open_mobile_nav();
+        }
+    }
+
+    function close_mobile_nav() {
+        mobile_links.style.height = "0px";
+
+        setTimeout(() => {
+            mobile_links.style.display = "none";
+        }, 500);
+        burger_open = false;
+    }
+
+    function open_mobile_nav() {
+        mobile_links.style.display = "flex";
+            
+        setTimeout(() => {
+            mobile_links.style.height = "300px";
+        }, 5);
+        
+        burger_open = true;
+    }
+    //#endregion Mobile Nav Handlers
+
+
+    //#region Project Handlers
     let project_list = [
         {
             "title": "Rambo with Bear",
@@ -44,6 +84,7 @@ window.addEventListener("load", function() {
     ]
 
     let dot_menu   = document.querySelector(".dot-menu"),
+        projects_outer = document.querySelector(".projects-outer"),
         project    = document.querySelector(".project"),
         proj_title = document.querySelector(".project .project-title"),
         proj_image = document.querySelector(".project .project-image"),
@@ -119,8 +160,7 @@ window.addEventListener("load", function() {
     function set_num_projects() {
         if (window.screen.width > 480) {
             if (!twoProj) {
-                let projects = document.querySelector(".projects-outer"),
-                    project2 = project.cloneNode(true);
+                let project2 = project.cloneNode(true);
 
                 project2.classList.remove("project");
                 project2.classList.add("project2");
@@ -131,13 +171,26 @@ window.addEventListener("load", function() {
                 project2.children[1].children[1].href      = project_list[1]["link"];
                 project2.children[1].children[2].innerHTML = project_list[1]["text"];
 
-                projects.appendChild(project2);
+                projects_outer.appendChild(project2);
             }
 
             twoProj = true;
+        } else {
+            for (let i = 0; i < projects_outer.children.length; i++) {
+                if (projects_outer.children[i].classList.contains("project2")) {
+                    projects_outer.children[i].remove();
+                    break;
+                }
+            }
+            twoProj = false;
         }
     }
 
     // this.window.addEventListener('resize', set_num_projects());
     set_num_projects();
+    this.window.addEventListener("resize", () => {
+        set_num_projects();
+    })
+    //#endregion Project Handlers
+
 });
