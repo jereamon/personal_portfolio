@@ -48,6 +48,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 nav {
     height: var(--mobile-nav-height);
     position: fixed;
@@ -76,11 +80,11 @@ img {
 
 section {
     align-items: center;
-    background-image: url("images/DSC00800-phone_crop.jpg");
+    background-image: url("images/DSC00800-phone_crop-2.jpg");
     background-size: cover;
     display: flex;
     justify-content: center;
-    min-height: 75vh;
+    min-height: 85vh;
     padding: 25px 0;
     position: relative;
 }
@@ -148,6 +152,10 @@ section {
     display: flex;
 }
 
+.logo {
+    font-size: 22px;
+}
+
 .burger-container {
     height: var(--nav-link-height);
     display: flex;
@@ -193,8 +201,12 @@ section {
     width: 100vw;
 }
 
+.mobile-nav-links li, .nav-links li {
+    background-color: #333333;
+    transition: background-color 500ms;
+}
+
 .mobile-nav-links li {
-    background: #333333;
     border-bottom: var(--light-grey) solid 1px;
     width: 100vw;
 }
@@ -239,7 +251,7 @@ li.current-link {
 
 /*#region HOME Section */
 .home-page {
-    background-image: url("images/DSC00800-phone_crop.jpg");
+    background-image: url("images/DSC00800-phone_crop-2.jpg");
     height: 100%;
 }
 
@@ -257,7 +269,7 @@ li.current-link {
 /*#region SKILLS Section */
 .skills {
     /* display: none; */
-    background-image: url("images/DSC01115-phone_crop.jpg");
+    background-image: url("images/DSC01115-phone_crop-2.jpg");
     background-position: bottom center;
     min-height: 75vh;
     z-index: 999;

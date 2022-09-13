@@ -3,13 +3,21 @@ window.addEventListener("load", function() {
         light_grey = "#e1edf5";
 
     //#region Mobile Nav Handlers
-    let nav_height = this.document.querySelector("nav").offsetHeight,
+    let nav_height       = document.querySelector("nav").offsetHeight,
         burger_container = document.querySelector(".burger-container"),
-        burger_open = false,
-        mobile_links = document.querySelector(".mobile-nav-links");
+        burger_open      = false,
+        mobile_links     = document.querySelector(".mobile-nav-links"),
+        desktop_links    = document.querySelector(".nav-links");
+
+    let home = document.querySelector(".home-page"),
+        skills = document.querySelector(".skills"),
+        projects = document.querySelector(".projects"),
+        contact  = document.querySelector(".contact"),
+        sections = [home, skills, projects, contact];
 
     burger_container.addEventListener("click", toggle_mobile_nav);
     this.window.addEventListener("scroll", close_mobile_nav);
+    this.window.addEventListener("scroll", check_active_nav_link);
     
 
     function toggle_mobile_nav() {
@@ -37,6 +45,24 @@ window.addEventListener("load", function() {
         }, 5);
         
         burger_open = true;
+    }
+
+
+    function check_active_nav_link() {
+        for (let i = 0; i < sections.length; i++) {
+            if (window.scrollY >= sections[i].offsetTop - (sections[i].clientHeight * .45) && window.scrollY < sections[i].offsetTop + (sections[i].clientHeight * .55)) {
+                clear_current_link_class();
+                mobile_links.children[i].classList.add("current-link");
+                desktop_links.children[i].classList.add("current-link");
+            }
+        }
+    }
+
+    function clear_current_link_class() {
+        for (let i = 0; i < mobile_links.children.length; i++) {
+            mobile_links.children[i].classList.remove("current-link");
+            desktop_links.children[i].classList.remove("current-link");
+        }
     }
     //#endregion Mobile Nav Handlers
 
