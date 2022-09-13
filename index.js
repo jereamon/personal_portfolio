@@ -70,34 +70,34 @@ window.addEventListener("load", function() {
     //#region Project Handlers
     let project_list = [
         {
-            "title": "Rambo with Bear",
-            "img": "images/20200807_171326.jpg",
-            "link": "#",
-            "text": `Sed viverra leo vitae enim volutpat fermentum. 
-            Vivamus consectetur sapien ut urna finibus pretium.
-            Aliquam egestas suscipit ultrices. Phasellus auctor nisl
-            elit, vel tincidunt turpis vehicula efficitur.
-            Ut sollicitudin feugiat nulla et vulputate. Phasellus
-            euismod neque quis leo rhoncus bibendum.
-            In dui eros, dapibus non nunc mattis, ullamcorper
-            vulputate quam. Nulla a euismod nisi.`
+            "title": "Micro Python Feather Lamp",
+            "img": "images/lamp-demo.gif",
+            "link": "https://github.com/jereamon/micropython-feather-lamp",
+            "link-text": "Github Feather Lamp Repo",
+            "text": `I 3d printed parts to house 34 leds and an ESP8266
+                     which is running Micro Python and making the lights
+                     do interesting things. Since it's an ESP8266 it also
+                     runs a webserver which lets you change the light's color.`
         },
         {
             "title": "Stuff and things",
             "img": "images/DSC01115-square_crop.jpg",
             "link": "#",
+            "link-text": "Stuff and Things Repo",
             "text": `You know just some text here.`
         },
         {
             "title": "Stuff and things",
             "img": "images/DSC01115-square_crop.jpg",
             "link": "#",
+            "link-text": "More Stuff and Things",
             "text": `You know just some text here.`
         },
         {
             "title": "Rambo with Bear",
             "img": "images/20200807_171326.jpg",
             "link": "#",
+            "link-text": "Fluffy Repo",
             "text": `Sed viverra leo vitae enim volutpat fermentum. 
             Vivamus consectetur sapien ut urna finibus pretium.
             Aliquam egestas suscipit ultrices. Phasellus auctor nisl
@@ -108,6 +108,7 @@ window.addEventListener("load", function() {
             vulputate quam. Nulla a euismod nisi.`
         },
     ]
+
 
     let dot_menu   = document.querySelector(".dot-menu"),
         projects_outer = document.querySelector(".projects-outer"),
@@ -134,13 +135,15 @@ window.addEventListener("load", function() {
 
                     setTimeout(function() {
                         proj_title.innerHTML = project_list[i*2]["title"];
-                        proj_image.src  =      project_list[i*2]["img"];
-                        proj_link.href  =      project_list[i*2]["link"];
+                        proj_image.src       = project_list[i*2]["img"];
+                        proj_link.href       = project_list[i*2]["link"];
+                        proj_link.innerHTML  = project_list[i*2]["link-text"];
                         proj_text.innerHTML  = project_list[i*2]["text"];
 
                         proj_title2.innerHTML = project_list[(i * 2) + 1]["title"];
-                        proj_image2.src  =      project_list[(i * 2) + 1]["img"];
-                        proj_link2.href  =      project_list[(i * 2) + 1]["link"];
+                        proj_image2.src       = project_list[(i * 2) + 1]["img"];
+                        proj_link2.href       = project_list[(i * 2) + 1]["link"];
+                        proj_link2.innerHTML  = project_list[(i * 2) + 1]["link-text"];
                         proj_text2.innerHTML  = project_list[(i * 2) + 1]["text"];
 
                         setTimeout(function() {
@@ -156,11 +159,13 @@ window.addEventListener("load", function() {
             for (let i = 0; i < dot_menu.children.length; i++) {
                 if (e.target == dot_menu.children[i]) {
                     e.target.style.backgroundColor = blue;
+                    project.style.opacity = "0%";
 
                     setTimeout(function() {
                         proj_title.innerHTML = project_list[i]["title"];
-                        proj_image.src  =      project_list[i]["img"];
-                        proj_link.href  =      project_list[i]["link"];
+                        proj_image.src       = project_list[i]["img"];
+                        proj_link.href       = project_list[i]["link"];
+                        proj_link.innerHTML  = project_list[i]["link-text"];
                         proj_text.innerHTML  = project_list[i]["text"];
 
                         setTimeout(function() {

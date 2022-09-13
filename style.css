@@ -271,7 +271,6 @@ li.current-link {
     /* display: none; */
     background-image: url("images/DSC01115-phone_crop-2.jpg");
     background-position: bottom center;
-    min-height: 75vh;
     z-index: 999;
 }
 
@@ -442,6 +441,16 @@ will change too.
 }
 
 @media (min-width: 1200px) {
+    .projects {
+        justify-content: space-between;
+    }
 
+    .projects-outer {
+        justify-content: space-evenly;
+    }
+
+    .project, .project2 {
+        max-width: 33%;
+    }
 }
 /*#endregion Media Queries */
