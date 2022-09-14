@@ -80,11 +80,14 @@ window.addEventListener("load", function() {
                      runs a webserver which lets you change the light's color.`
         },
         {
-            "title": "Stuff and things",
-            "img": "images/DSC01115-square_crop.jpg",
-            "link": "#",
-            "link-text": "Stuff and Things Repo",
-            "text": `You know just some text here.`
+            "title": "Meditation Timer",
+            "img": "images/meditation-timer_square.jpg",
+            "link": "https://github.com/jereamon/meditation-timer",
+            "link-text": "Meditation Timer Github Repo",
+            "text": `After meditating for some time I was able to anticipate
+                     when my timer would go off. I built a simple website and
+                     made use of Javascript to create a simple timer that can
+                     be set to go off at a random time within a user set range.`
         },
         {
             "title": "Stuff and things",
