@@ -80,7 +80,6 @@ img {
 
 section {
     align-items: center;
-    background-image: url("images/DSC00800-phone_crop-2.jpg");
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -251,7 +250,7 @@ li.current-link {
 
 /*#region HOME Section */
 .home-page {
-    background-image: url("images/DSC00800-phone_crop-2.jpg");
+    background-image: url("images/DSC00800-phone.jpg");
     height: 100%;
 }
 
@@ -269,7 +268,7 @@ li.current-link {
 /*#region SKILLS Section */
 .skills {
     /* display: none; */
-    background-image: url("images/DSC01115-phone_crop-2.jpg");
+    background-image: url("images/DSC01115-phone.jpg");
     background-position: bottom center;
     z-index: 999;
 }
@@ -366,8 +365,8 @@ will change too.
 
 
 /*#region CONTACT Section */
-.contact .text-container.blue {
-    /* padding: 15vw; */
+.contact {
+    background-image: url("images/DSC00531-phone.jpg");
 }
 
 .contact form {
@@ -434,10 +433,32 @@ will change too.
     .desktop-nav {
         display: flex;
     }
+
+    .home-page {
+        background-image: url("images/DSC00800-tablet.jpg");
+    }
+
+    .skills {
+        background-image: url("images/DSC01115-tablet.jpg");
+    }
+
+    .contact {
+        background-image: url("images/DSC00531-tablet.jpg");
+    }
 }
 
 @media (min-width: 1024px) {
+    .home-page {
+        background-image: url("images/DSC00800-small_desktop.jpg");
+    }
 
+    .skills {
+        background-image: url("images/DSC01115-small_desktop.jpg");
+    }
+
+    .contact {
+        background-image: url("images/DSC00531-small_desktop.jpg");
+    }
 }
 
 @media (min-width: 1200px) {
@@ -451,6 +472,18 @@ will change too.
 
     .project, .project2 {
         max-width: 33%;
+    }
+
+    .home-page {
+        background-image: url("images/DSC00800-desktop.jpg");
+    }
+
+    .skills {
+        background-image: url("images/DSC01115-desktop.jpg");
+    }
+
+    .contact {
+        background-image: url("images/DSC00531-desktop.jpg");
     }
 }
 /*#endregion Media Queries */
